@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2753510989864899042}
   - component: {fileID: 2753510989864899043}
   - component: {fileID: 2753510989864899044}
+  - component: {fileID: 6505950311134772373}
   - component: {fileID: 2753510989864899045}
   m_Layer: 0
   m_Name: Collectible
@@ -98,6 +99,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6505950311134772373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2753510989864899046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00843d2bb857a5448856be424fa6d4fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countText: {fileID: 0}
 --- !u!114 &2753510989864899045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,4 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01194c726c7310c42a88e419b1a700b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jingleVolume: 0.5
+  frequency: 200
+  fmVolume: 0.2
+  mainVolume: 0.5
   positions: []
