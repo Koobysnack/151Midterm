@@ -21,15 +21,17 @@ public class Collectible : MonoBehaviour
 
     private PDSend send;
     private Transform player;
+    private int bgIndex;
 
     private void Awake() {
         // setup collectible position and PDSend
         positionIndex = 0;
         if(positions.Count > 0)
             transform.position = positions[positionIndex];
-        send = GetComponent<PDSend>();
+        bgIndex = 0;
 
         // start distance tone
+        send = GetComponent<PDSend>();
         send.SendPdMessage("startDist", 0);
         send.SendPdMessage("setFreq", frequency);
         send.SendPdMessage("fmVol", fmVolume);
@@ -54,8 +56,10 @@ public class Collectible : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         // on collision with player
         if(other.tag == "Player") {
-            // send message to PD to play jingle
+            // send message to PD to play jingle and move to next BG sound
             send.SendPdMessage("jingle", jingleVolume);
+            bgIndex++;
+            send.SendPdMessage("bgSelect", bgIndex);
 
             // update position or destroy gameobject
             positionIndex++;
